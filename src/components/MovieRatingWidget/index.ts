@@ -1,0 +1,1 @@
+export { MovieRatingWidget } from './MovieRatingWidget';

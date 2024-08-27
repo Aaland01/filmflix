@@ -1,0 +1,24 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  # Define any environment variables needed for the CI/CD pipeline
+build:
+  image: node:latest
+  stage: build
+  before_script:
+    - npm install -g pnpm
+    - pnpm install
+  script:
+    - pnpm run build # Build the project
+
+test:
+  image: node:latest
+  stage: test
+  before_script:
+    - npm install -g pnpm
+    - pnpm install
+  script:
+    - pnpm test # Run tests
